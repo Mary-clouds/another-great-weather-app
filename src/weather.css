@@ -25,15 +25,16 @@ footer {
   margin: 30px auto;
 }
 
-description {
-  margin-bottom: 30px;
+.weatherApp {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #dadde1;
+  border-radius: 20px;
 }
-.cityname {
-  font-size: 18px;
-  text-align: center;
-  position: relative;
-  left: 100px;
-  top: 15px;
+
+.description {
+  margin-bottom: 30px;
 }
 .Temperature-Icons {
   margin: 0 auto;
