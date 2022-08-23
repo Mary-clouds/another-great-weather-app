@@ -39,10 +39,19 @@ function displayTemperature(response) {
   //date element
   let dateElement = document.querySelector("#currentDate");
   dateElement.innerHTML = findDate(response.data.dt * 1000);
+
+  // show the icon
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let key = "1989ce48f0ddeb9155d07cad2fe7cac2";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=${key}&units=metric  `;
+let city = "greifswald";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric  `;
 
 axios.get(apiUrl).then(displayTemperature);
 
