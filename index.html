@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <link rel="stylesheet" href="src/weather.css" />
 
@@ -49,15 +49,13 @@
         </form>
 
         <h2 id="cityInfos">
-          <div class="cityname" id="newCity">
-            <strong>Berlin</strong> <br />
-          </div>
+          <div class="float-left"><strong id="newCity"> </strong> <br /></div>
           <span id="currentDate">Saturday 16 August</span>
           <span id="cityTime"> </span>
           <br />
           <span class="d-flex weather-temperature">
             <img src="" alt="" id="icon" class="float-left" />
-            <span id="description">❄</span>
+            <span id="description"></span>
           </span>
         </h2>
 
@@ -70,15 +68,15 @@
             <div class="col-4">
               <span class="day" id="dayGrad"> 17 </span>
               <span class="degrees">
-                <a href="#" id="celciusDay" class="active">°C</a> |
-                <a href="#" id="fahrenheitDay" class="active">°F </a>
+                <a href="#" id="celcius" class="active">°C</a> |
+                <a href="#" id="fahrenheit" class="active">°F </a>
               </span>
             </div>
             <div class="col-3">
               <ul>
-                <li id="humidity">Humidity: <strong>60%</strong></li>
-                <li id="precipitation">precipitation: <strong> 0%</strong></li>
-                <li id="wind">Wind: <strong> 6,17 km/h</strong></li>
+                <li>Feels like: <span id="feelsLike"></span>°F</li>
+                <li>Wind: <span id="wind"> </span> km/h</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
               </ul>
             </div>
           </div>
@@ -141,7 +139,7 @@
         coded by
         <a href="" target="_blank" rel="noopener norefereer"> Mary Nevermann</a>
         <a
-          href="https://github.com/Mary-clouds/vanilla-Weather-app"
+          href="https://github.com/Mary-clouds/another-great-weather-app"
           target="_blank"
           rel="noopener norefereer"
         >
@@ -151,7 +149,7 @@
           hosted on Netlify</a
         >
       </footer>
-      <script src="src/weather.js"></script>
     </div>
+    <script src="src/weather.js"></script>
   </body>
 </html>

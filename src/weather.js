@@ -1,4 +1,30 @@
+function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#dayGrad");
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+  let cityElement = document.querySelector("#newCity");
+  cityElement.innerHTML = response.data.name;
+
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
+
+  // Angaben zum wetter
+  let feelsLikeElement = document.querySelector("#feelsLike");
+  feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
+
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.main.humidity;
+
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+}
+
 let key = "1989ce48f0ddeb9155d07cad2fe7cac2";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=${key}&units=metric  `;
+
+axios.get(apiUrl).then(displayTemperature);
+
+/*
 // display the city search result
 function searchTheCity(event) {
   event.preventDefault();
@@ -20,7 +46,6 @@ let city = document.querySelector("#newCity");
 city.addEventListener("submit", Search);
 }else {
     alert(`Please enter a city …`);*/
-}
 
 //display currentposition
 /*
