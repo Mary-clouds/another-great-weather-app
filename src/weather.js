@@ -1,3 +1,21 @@
+//show the current  date and time
+function findDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = ["Sun", "Mon", "Tue", "Wed", "Fri", "Sat"];
+
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
+
+//show city temperature
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#dayGrad");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -17,6 +35,10 @@ function displayTemperature(response) {
 
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
+
+  //date element
+  let dateElement = document.querySelector("#currentDate");
+  dateElement.innerHTML = findDate(response.data.dt * 1000);
 }
 
 let key = "1989ce48f0ddeb9155d07cad2fe7cac2";
