@@ -24,17 +24,25 @@ li {
   color: rgb(135, 135, 135);
 }
 button {
-  background-color: #0b5ed7;
+  background-color: #0d6efd;
   color: white;
   border-color: #c2dbfe;
-  border-radius: 15px;
+  border-radius: 9px;
+  max-width: 120px;
   box-shadow: 15px;
+}
+button:hover {
+  background-color: #0b5ed7;
 }
 footer {
   max-width: 900px;
   margin: 30px auto;
   color: whitesmoke;
 }
+#locationIcon {
+  max-width: 15px;
+}
+
 #github-Link:hover {
   color: whitesmoke;
 }
@@ -45,9 +53,9 @@ footer {
   max-width: 40px;
 }
 .weatherApp {
-  background-color: white;
+  background-color: #fbfbfb;
   border-radius: 15px;
-  max-width: 900px;
+  max-width: 950px;
   margin: 50px auto;
   padding: 30px;
   border: 1px solid #dadde1;
@@ -74,13 +82,10 @@ footer {
   font-size: 40px;
 }
 
-.night {
-  color: rgb(135, 135, 135);
-}
-
 .card {
   position: relative;
   top: 25px;
+
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #dadde1;
