@@ -57,6 +57,7 @@ footer {
   position: relative;
   top: -18px;
 }
+
 .day {
   font-size: 40px;
 }
@@ -74,10 +75,10 @@ footer {
   border-radius: 10px;
 }
 .active {
-  text-decoration: none;
-
+  color: rgb(33, 33, 33);
   cursor: default;
+  text-decoration: none;
 }
 .active:hover {
-  color: darkgray;
+  text-decoration: none;
 }

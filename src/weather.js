@@ -26,6 +26,9 @@ function displayTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
 
+  // variable für temperature conversion
+  celcius = response.data.main.temp;
+
   // Angaben zum wetter
   let feelsLikeElement = document.querySelector("#feelsLike");
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
@@ -63,12 +66,44 @@ function formSubmit(event) {
   let cityInputElement = document.querySelector("#cityInput");
   search(cityInputElement.value);
 }
+//convert in fahrenheit
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let dayGradElement = document.querySelector("#dayGrad");
+
+  //add the active class for fahrenheit link
+  celciusElement.classList.remove("active");
+  fahrenheitElement.classList.add("active");
+
+  //fahrenheit convertion formula
+  let fahrenheitTemperature = (celcius * 9) / 5 + 32;
+  dayGradElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+// convert in celcius
+function displayCelcius(event) {
+  event.preventDefault();
+  //add the active class for celcius
+  celciusElement.classList.add("active");
+  fahrenheitElement.classList.remove("active");
+  //celcius conversion code
+  let dayGradElement = document.querySelector("#dayGrad");
+  dayGradElement.innerHTML = Math.round(celcius);
+}
+let celcius = null;
 //for the default city
 search("Paris");
 
 //search-Form id
 let formElement = document.querySelector("#citySearch");
 formElement.addEventListener("submit", formSubmit);
+
+//select the fahrenheit id and excecute the displayFahrenheit function
+let fahrenheitElement = document.querySelector("#fahrenheit");
+fahrenheitElement.addEventListener("click", displayFahrenheit);
+//select the celcius id and excecute the displayCelcius function
+let celciusElement = document.querySelector("#celcius");
+celciusElement.addEventListener("click", displayCelcius);
+
 /*
 // display the city search result
 function searchTheCity(event) {
