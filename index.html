@@ -21,13 +21,13 @@
   <body>
     <div class="container">
       <div class="weatherApp">
-        <form id="citysearch">
+        <form id="citySearch">
           <div class="row">
             <div class="col-7">
               <input
                 type="city"
                 placeholder="Enter a city here "
-                id="cityinput"
+                id="cityInput"
                 class="form-control search-input"
                 autocomplete="off"
                 autofocus="on"
@@ -41,7 +41,6 @@
                 id="searchButton"
               />
             </div>
-
             <div class="col-2">
               <button>🗺 current location</button>
             </div>
@@ -51,7 +50,7 @@
         <h2 id="cityInfos">
           <div class="float-left"><strong id="newCity"> </strong> <br /></div>
           <div class="float-left">
-            Last Updated: <span id="currentDate"></span>
+            Last updated: <span id="currentDate"></span>
           </div>
           <span id="cityTime"> </span>
           <br />
@@ -64,10 +63,10 @@
         <h3>
           <div class="row">
             <div class="col-1">
-              <img class="Temperature-Icons" src="" />
+              <img class="temperature-Icons" src="images/thermo.gif" />
             </div>
 
-            <div class="col-4">
+            <div class="col-2">
               <span class="day" id="dayGrad"> 17 </span>
               <span class="degrees">
                 <a href="#" id="celcius" class="active">°C</a> |
@@ -76,7 +75,7 @@
             </div>
             <div class="col-3">
               <ul>
-                <li>Feels like: <span id="feelsLike"></span>°F</li>
+                <li>Feels like: <span id="feelsLike"></span>°C</li>
                 <li>Wind: <span id="wind"> </span> km/h</li>
                 <li>Humidity: <span id="humidity"></span>%</li>
               </ul>

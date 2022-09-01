@@ -32,7 +32,7 @@ footer {
   margin: 30px auto;
 }
 #icon {
-  max-width: 35px;
+  max-width: 40px;
 }
 .weatherApp {
   max-width: 900px;
@@ -46,7 +46,7 @@ footer {
   margin-bottom: 30px;
 }
 
-.Temperature-Icons {
+.temperature-Icons {
   margin: 0 auto;
   display: block;
   max-width: 80px;

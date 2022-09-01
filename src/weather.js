@@ -49,12 +49,26 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let key = "1989ce48f0ddeb9155d07cad2fe7cac2";
-let city = "greifswald";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric  `;
+//search the city
+function search(city) {
+  let key = "1989ce48f0ddeb9155d07cad2fe7cac2";
 
-axios.get(apiUrl).then(displayTemperature);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric  `;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
+//show the city
+function formSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#cityInput");
+  search(cityInputElement.value);
+}
+//for the default city
+search("Paris");
+
+//search-Form id
+let formElement = document.querySelector("#citySearch");
+formElement.addEventListener("submit", formSubmit);
 /*
 // display the city search result
 function searchTheCity(event) {
