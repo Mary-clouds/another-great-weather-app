@@ -1,5 +1,8 @@
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-image: url("images/rainy-day.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h2 {
@@ -30,11 +33,20 @@ button {
 footer {
   max-width: 900px;
   margin: 30px auto;
+  color: whitesmoke;
+}
+#github-Link:hover {
+  color: whitesmoke;
+}
+#netlify-Link:hover {
+  color: whitesmoke;
 }
 #icon {
   max-width: 40px;
 }
 .weatherApp {
+  background-color: white;
+  border-radius: 15px;
   max-width: 900px;
   margin: 50px auto;
   padding: 30px;

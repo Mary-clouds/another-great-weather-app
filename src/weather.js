@@ -134,87 +134,9 @@ celciusElement.addEventListener("click", displayCelcius);
 // show your current location temp
 let currentLocation = document.querySelector("button");
 currentLocation.addEventListener("click", getCurrentLocation);
+
 /*
-//display currentposition
-/*
 
-
-
-
-//display date and time
-function displayDate(event) {
-  event.preventDefault();
-
-  let currentDate = new Date();
-
-  let days = ["Sonday", "Monday", "Tuesday", "Wednesday", "Friday", "Saturday"];
-  let day = days[currentDate.getDay()];
-  let date = currentDate.getDate();
-  let hours = currentDate.getHours();
-  let minute = currentDate.getMinutes();
-  if (hours < 10 && minutes < 10) {
-    hours = `0${hours}`;
-    minutes = `0${minutes}`;
-  }
-
-  let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sept",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  let month = months[currentDate.getMonth()];
-
-  let newDate = document.querySelector("#currentDate");
-  newDate.innerHTML = `${day} ${date} ${month}, ${hours}:${minute}`;
-}
-
-//convert the degrees
-let degreeElement = document.querySelector("#dayGrad");
-function convertDegrees(event) {
-  event.preventDefault();
-  //remove the link effect on fahrenheit
-  if (fahrenheitLink.classList.add("active")) {
-    celciusLink.classList.remove("active");
-    let convertInFahrenheit = (celciusTemp + 9) / 5 + 32;
-    degreeElement.innerHTML = Math.round(convertInFahrenheit);
-  } else {
-    //remove the link effect on celcius
-    celciusLink.classList.add("active");
-    fahrenheitLink.classList.remove("active");
-
-    //convert celcius by selecting the celcius id and changing the day temperature
-    let convertInCelcius = (convertInFahrenheit - 32) / 1.8;
-    degreeElement.innerHTML = Math.round(convertInCelcius);
-  }
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheitDay");
-fahrenheitLink.addEventListener("click", convertDegrees);
-
-let celciusLink = document.querySelector("#celciusDay");
-celciusLink.addEventListener("click", convertDegrees);
-
-//display the temperature
-function displayCityTemperature(weatherData) {
-  let degrees = Math.round(weatherData.main.temp);
-  degreeElement.innerHTML = `${degrees}`;
-
-  //wind, precipitation, humidity
-  let windElement = document.querySelector("#wind");
-  windElement.innerHTML = `Wind: ${Math.round(weatherData.wind.speed)} km/h`;
-  let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = `Humidity: ${weatherData.main.humidity}%`;
-  let precipitationElement = document.querySelector("#precipitation");
-  precipitationElement.innerHTML = `Precipitation: ${precipitation.value}%`;
 
   //icon and temperature
 
