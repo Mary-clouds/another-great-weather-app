@@ -76,9 +76,10 @@ footer {
 }
 .active {
   color: rgb(33, 33, 33);
-  cursor: default;
   text-decoration: none;
+  cursor: default;
 }
+
 .active:hover {
   text-decoration: none;
 }
