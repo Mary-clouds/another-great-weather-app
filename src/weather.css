@@ -30,6 +30,8 @@ button {
   border-radius: 9px;
   max-width: 120px;
   box-shadow: 15px;
+  padding-top: 3px;
+  margin-top: 2px;
 }
 button:hover {
   background-color: #0b5ed7;
@@ -40,7 +42,7 @@ footer {
   color: whitesmoke;
 }
 #locationIcon {
-  max-width: 15px;
+  max-width: 19px;
 }
 
 #github-Link:hover {
@@ -52,6 +54,15 @@ footer {
 #icon {
   max-width: 40px;
 }
+#forecast-date,
+#forecast-temperature-min {
+  opacity: 0.6;
+  color: #595c5f;
+}
+#forecast-icon {
+  font-size: 13px;
+}
+
 .weatherApp {
   background-color: #fbfbfb;
   border-radius: 15px;
@@ -83,7 +94,6 @@ footer {
 }
 
 .card {
-  position: relative;
   top: 25px;
 
   margin: 20px auto;

@@ -41,6 +41,7 @@
                 id="searchButton"
               />
             </div>
+
             <div class="col-2">
               <button>
                 <img
@@ -59,6 +60,7 @@
             Last updated: <span id="currentDate"></span>
           </div>
           <span id="cityTime"> </span>
+
           <br />
           <span class="d-flex weather-temperature">
             <img src="" alt="" id="icon" class="float-left" />
@@ -90,43 +92,78 @@
         </h3>
 
         <div class="card-group">
-          <div class="card" style="width: 9rem">
+          <div class="card" style="width: 8rem">
             <div class="card-body">
               <h5 class="card-title">Mon</h5>
-              <h6 class="card-subtitle mb-3 text-muted">23 Mai 🌨</h6>
-              <p class="card-text">25°C|°F</p>
+              <h6 class="card-subtitle mb-3 text-muted" id="forecast-date">
+                23 Mai <span id="forecast-icon">🌨</span>
+              </h6>
+              <p class="card-text">
+                <span id="forecast-temperature-max">25°</span>|<span
+                  id="forecast-temperature-min"
+                  >15°</span
+                >
+              </p>
             </div>
           </div>
 
-          <div class="card" style="width: 9rem">
+          <div class="card" style="width: 8rem">
             <div class="card-body">
               <h5 class="card-title">Tue</h5>
-              <h6 class="card-subtitle mb-3 text-muted">24 Mai ⛅</h6>
-              <p class="card-text">25°C|°F</p>
+              <h6 class="card-subtitle mb-3 text-muted" id="forecast-date">
+                24 Mai<span id="forecast-icon">⛅</span>
+              </h6>
+              <p class="card-text">
+                <span id="forecast-temperature-max">25°</span>|<span
+                  id="forecast-temperature-min"
+                  >15°</span
+                >
+              </p>
             </div>
           </div>
 
-          <div class="card" style="width: 11rem">
+          <div class="card" style="width: 8rem">
             <div class="card-body">
               <h5 class="card-title">Wed</h5>
-              <h6 class="card-subtitle mb-3 text-muted">25 Mai ☔</h6>
-              <p class="card-text">25°C|°F</p>
+              <h6 class="card-subtitle mb-3 text-muted" id="forecast-date">
+                25 Mai<span id="forecast-icon"> ☔</span>
+              </h6>
+              <p class="card-text">
+                <span id="forecast-temperature-max">25°</span>|<span
+                  id="forecast-temperature-min"
+                  >15°</span
+                >
+              </p>
             </div>
           </div>
 
-          <div class="card" style="width: 11rem">
+          <div class="card" style="width: 8rem">
             <div class="card-body">
               <h5 class="card-title">Thu</h5>
-              <h6 class="card-subtitle mb-3 text-muted">26 Mai 🌧</h6>
-              <p class="card-text">25°C|°F</p>
+              <h6 class="card-subtitle mb-3 text-muted" id="forecast-date">
+                26 Mai <span id="forecast-icon">🌧</span>
+              </h6>
+              <p class="card-text">
+                <span id="forecast-temperature-max">25°</span>|<span
+                  id="forecast-temperature-min"
+                  >15°</span
+                >
+              </p>
             </div>
           </div>
 
-          <div class="card" style="width: 11rem">
+          <div class="card" style="width: 8rem">
             <div class="card-body">
               <h5 class="card-title">Fri</h5>
-              <h6 class="card-subtitle mb-3 text-muted">27 Mai ❄</h6>
-              <p class="card-text">25°C|°F</p>
+              <h6 class="card-subtitle mb-3 text-muted" id="forecast-date">
+                27 Mai<span id="forecast-icon">❄</span>
+              </h6>
+              <p class="card-text">
+                <span id="forecast-temperature-max">25°</span>|<span
+                  id="forecast-temperature-min"
+                  >15°</span
+                >
+              </p>
             </div>
           </div>
         </div>
