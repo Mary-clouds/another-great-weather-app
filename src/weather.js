@@ -1,6 +1,6 @@
 // api key as a global variable
 let key = `a43564c91a6c605aeb564c9ed02e3858`;
-//my apikey hier did not work"1989ce48f0ddeb9155d07cad2fe7cac2";
+//my apikey hier did not work for the daily forecast"1989ce48f0ddeb9155d07cad2fe7cac2";
 
 //show the current  date and time
 function findDate(timestamp) {
@@ -13,39 +13,72 @@ function findDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let days = ["Sun", "Mon", "Tue", "Wed", "Fri", "Sat"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+
+// forecast date formatieren
+function forecastFormat(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  /*let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[date.getMonth()];
+  let dailydate = `${day}${month}`;
+  */
+  return days[day];
+}
 //display the forecast
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast-card");
 
   // make a html code repeat with new variables
   let forecastHTML = `<div class="row"> `;
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  //let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
           <div class = "column"> 
             <div class="card">
-            <h5 class="card-title">${day}</h5>
+            <h5 class="card-title">${forecastFormat(forecastDay.dt)}</h5>
             <h6 class="card-subtitle mb-3 text-muted" id="forecast-date">
-              23 Mai <span id="forecast-icon">🌨</span>
+              
+              23Mai <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" id="forecast-icon" alt="" width="42"></span>
             </h6>
             <p class="card-text">
-              <span id="forecast-temperature-max">25°</span>|<span
+              <span id="forecast-temperature-max">${Math.round(
+                forecastDay.temp.max
+              )}°</span>|<span
                 id="forecast-temperature-min"
-                >15°</span
+                >${Math.round(forecastDay.temp.min)}°</span
               >
             </p>
             </div>
             </div>
            
         `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
