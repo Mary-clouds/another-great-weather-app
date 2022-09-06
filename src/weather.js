@@ -1,5 +1,7 @@
-// key global variable
-let key = "1989ce48f0ddeb9155d07cad2fe7cac2";
+// api key as a global variable
+let key = `a43564c91a6c605aeb564c9ed02e3858`;
+
+//my apikey hier did not work"1989ce48f0ddeb9155d07cad2fe7cac2";
 
 //show the current  date and time
 function findDate(timestamp) {
@@ -17,7 +19,49 @@ function findDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+//display the forecast
+function displayForecast(response) {
+  // console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast-card");
 
+  // make a html code repeat with new variables
+  let forecastHTML = `<div class="row"> `;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class = "column"> 
+            <div class="card">
+            <h5 class="card-title">${day}</h5>
+            <h6 class="card-subtitle mb-3 text-muted" id="forecast-date">
+              23 Mai <span id="forecast-icon">🌨</span>
+            </h6>
+            <p class="card-text">
+              <span id="forecast-temperature-max">25°</span>|<span
+                id="forecast-temperature-min"
+                >15°</span
+              >
+            </p>
+            </div>
+            </div>
+           
+        `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+//implement the 5 days forecast
+function getForecast(coordinates) {
+  console.log(coordinates);
+
+  let forecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric `;
+
+  console.log(forecastApiUrl);
+  //ceci c est le api pour 5jr: axios.get(forecastApiUrl).then(displayForecast);
+  //api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric
+}
 //show city temperature
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#dayGrad");
@@ -53,6 +97,9 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  // call a function to implement weather forecast
+  getForecast(response.data.coord);
 }
 
 //search the city
@@ -111,7 +158,7 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(currentPosition);
 
-  let currentCityLocation = ` http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid={API key}${key} `;
+  let currentCityLocation = ` api.openweathermap.org/geo/1.0/weather?${city}&appid=${key}`;
   if (currentCityLocation.length !== 0) {
     let currentCity = document.querySelector("#newCity");
     currentCity.innerHTML = `${currentCity} `;
@@ -119,7 +166,8 @@ function getCurrentLocation(event) {
 }
 
 //for the default city
-search("Paris");
+http: https: search("Paris");
+displayForecast();
 
 //search-Form id
 let formElement = document.querySelector("#citySearch");
