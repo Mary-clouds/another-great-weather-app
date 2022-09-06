@@ -1,6 +1,5 @@
 // api key as a global variable
 let key = `a43564c91a6c605aeb564c9ed02e3858`;
-
 //my apikey hier did not work"1989ce48f0ddeb9155d07cad2fe7cac2";
 
 //show the current  date and time
@@ -21,7 +20,7 @@ function findDate(timestamp) {
 }
 //display the forecast
 function displayForecast(response) {
-  // console.log(response.data.daily);
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast-card");
 
   // make a html code repeat with new variables
@@ -52,15 +51,14 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-//implement the 5 days forecast
+//implement the daily forecast
 function getForecast(coordinates) {
   console.log(coordinates);
 
   let forecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric `;
 
   console.log(forecastApiUrl);
-  //ceci c est le api pour 5jr: axios.get(forecastApiUrl).then(displayForecast);
-  //api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric
+  axios.get(forecastApiUrl).then(displayForecast);
 }
 //show city temperature
 function displayTemperature(response) {
@@ -167,7 +165,6 @@ function getCurrentLocation(event) {
 
 //for the default city
 http: https: search("Paris");
-displayForecast();
 
 //search-Form id
 let formElement = document.querySelector("#citySearch");
