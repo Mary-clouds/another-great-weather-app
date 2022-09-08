@@ -9,20 +9,15 @@ h2 {
   color: #212529;
   margin-top: 30px;
   line-height: 28px;
-  font-size: 24px;
+  font-size: 35px;
 }
 h3 {
   text-align: center;
   position: relative;
-  left: 100px;
-  top: 30px;
+  font-size: 20px;
+  left: 190px;
 }
-li {
-  list-style: none;
-  line-height: 19px;
-  font-size: 16px;
-  color: rgb(135, 135, 135);
-}
+
 button {
   background-color: #0d6efd;
   color: white;
@@ -35,11 +30,35 @@ button {
 }
 button:hover {
   background-color: #0b5ed7;
+  cursor: default;
 }
 footer {
   max-width: 900px;
   margin: 30px auto;
   color: whitesmoke;
+}
+
+#description,
+.cityInfo {
+  color: #212529;
+
+  font-size: 19px;
+}
+#parameters {
+  list-style: none;
+  line-height: 19px;
+  font-size: 17px;
+  color: rgb(135, 135, 135);
+}
+#fahrenheit {
+  text-decoration: none;
+  cursor: default;
+}
+#fahrenheit:hover {
+  color: #212529;
+}
+#searchButton {
+  cursor: default;
 }
 #locationIcon {
   max-width: 19px;
@@ -52,7 +71,7 @@ footer {
   color: whitesmoke;
 }
 #icon {
-  max-width: 40px;
+  max-width: 85px;
 }
 #forecast-date,
 #forecast-temperature-min {
@@ -73,10 +92,6 @@ footer {
   padding: 30px;
   border: 1px solid #dadde1;
   border-radius: 20px;
-}
-
-.description {
-  margin-bottom: 30px;
 }
 
 .temperature-Icons {
@@ -101,6 +116,7 @@ footer {
 }
 .row {
   margin: 0 -5px;
+  position: relative;
 }
 
 .card {

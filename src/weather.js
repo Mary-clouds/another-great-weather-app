@@ -20,29 +20,14 @@ function findDate(timestamp) {
 }
 
 // forecast date formatieren
-function forecastFormat(timestamp) {
+function formatForcast(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  /*let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  let month = months[date.getMonth()];
-  let dailydate = `${day}${month}`;
-  */
+
   return days[day];
 }
+
 //display the forecast
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -50,8 +35,6 @@ function displayForecast(response) {
 
   // make a html code repeat with new variables
   let forecastHTML = `<div class="row"> `;
-  //let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
       forecastHTML =
@@ -59,13 +42,14 @@ function displayForecast(response) {
         `
           <div class = "column"> 
             <div class="card">
-            <h5 class="card-title">${forecastFormat(forecastDay.dt)}</h5>
-            <h6 class="card-subtitle mb-3 text-muted" id="forecast-date">
+            <h5 class="card-title">${formatForcast(forecastDay.dt)}
+              <span>
               
-              23Mai <img src="http://openweathermap.org/img/wn/${
-                forecastDay.weather[0].icon
-              }@2x.png" id="forecast-icon" alt="" width="42"></span>
-            </h6>
+               
+                <img src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" id="forecast-icon" alt="" width="42"></span>
+           </h5>
             <p class="card-text">
               <span id="forecast-temperature-max">${Math.round(
                 forecastDay.temp.max
@@ -212,25 +196,3 @@ celciusElement.addEventListener("click", displayCelcius);
 // show your current location temp
 let currentLocation = document.querySelector("button");
 currentLocation.addEventListener("click", getCurrentLocation);
-
-/*
-
-
-  //icon and temperature
-
-  displayDate(weatherData.dt * 1000);
-
-  let iconElement = document.querySelector("#icon");
-
-  //change the value of icon attribute to...
-  iconElement.setAttribute(
-    "src",
-    ` https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`
-  );
-
-  let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = weatherData.weather[0].description;
-
-   searchForCity(cityInput.value);
-}
-*/
